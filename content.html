@@ -1,0 +1,234 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>辽宁清原抽水蓄能有限公司</title>
+		<style type="text/css">
+			#contentOut{
+				position: fixed;
+				right: 10px;
+			}
+
+			html,body {
+			  height: 100%;
+			  overflow: hidden;
+			}
+			body{
+				background: url(img/power.jpg) no-repeat 100% center;
+				background-size: cover;
+                                /*background: url(img/power.jpg);
+				background-position: center;
+				background-repeat: no-repeat;
+				background-attachment: fixed;*/
+			}
+			h2{
+				text-align: center;
+				height: 50px;
+				margin: 20px;
+			}
+			.wrap{
+				width: 1000px;
+				min-height: 400px;
+				margin: 50px auto;
+				border: 1px solid #666;
+			}
+			li{
+				border-bottom: 1px solid #000;
+				width: 90%;
+				list-style:none;
+				margin: 0 auto;
+			}
+			.content{
+				width: 1000px;
+				height: 400px;
+				margin: 40px auto;
+				overflow-y:scroll;
+			}
+			.picBox{
+			    width: 95%;
+			    min-height: 100px;
+			    margin: 10px 20px;
+			    float: left;
+			}
+			.picBox span{
+				float: left;
+				width: 70px;
+                margin-left: 30px;
+			}
+			.spanBox{
+				overflow:hidden;
+			}
+			.picBox .pic{
+			    width: 100px;
+			    height: 30px;
+			    line-height: 30px;
+			    text-align: center;
+			    border: 1px solid #ccc;
+			    padding: 5px;
+			    background: #fff;
+			    margin-bottom: 10px;
+			}
+			.picBox .pic img{
+			    width: 200px;
+			    height: 120px;
+			    margin: 25px 0 0 25px;
+			    float: left;
+			}
+			.wrap button{
+				width: 80px;
+			    height: 35px;
+			    line-height: 35px;
+			    cursor: pointer;
+			    font-size: 18px;
+			    margin: 15px 50px;
+                float: right;
+			}
+			/*//弹框*/
+			#alertBox{
+				width: 100%;
+				height: 100%;
+				background: #000000;
+				opacity: 0.3;
+				filter: alpha(opacity=30);
+				position: absolute;
+				top: 0;
+				left: 0;
+			}
+			.setBox{
+				width: 600px;
+				height: 400px;
+				background: #FFFFFF;
+				text-align: center;
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				margin-left: -300px;
+				margin-top: -200px;
+			}
+			.setBox p{
+				width: 100%;
+			    height: 30px;
+			    margin: 30px 0;
+			    text-align: center;
+			    line-height: 30px;
+			}
+			.setBox p i{
+				font-style: normal;
+				margin: 20px;
+				width: 80px;
+				display: inline-block;
+				text-align: right;
+			}
+			.setBox p.titleP{
+				font-size: 20px;
+				font-weight: bold;
+				border-bottom: 1px solid #ccc;
+				height: 40px;
+				line-height: 40px;
+			}
+			.setBox button,.sureBox button{
+				width: 80px;
+			    height: 35px;
+			    line-height: 35px;
+			    cursor: pointer;
+			    font-size: 18px;
+			    margin: 15px 50px;
+			}
+			.sureBox{
+				position: absolute;
+			    top: 50%;
+			    left: 50%;
+			    width: 500px;
+			    height: 300px;
+			    margin-top: -150px;
+			    margin-left: -250px;
+			    background: #fff;
+                text-align: center;
+			}
+			.sureBox p{
+				height: 30px;
+				line-height: 30px;
+				margin: 60px 0;
+				font-size: 24px;
+				
+			}
+		</style>
+		<script type="text/javascript" src="js/jquery-1.7.1.min.js"></script>
+		<script type="text/javascript" src="js/cont.js"></script>
+	</head>
+	<body>
+		<button id="contentOut">退出</button>
+		<div class="wrap">		
+			<h2>辽宁清原抽水蓄能有限公司</h2>
+			<li></li>
+			<button class="resetBtn" style="
+    margin-left: 10px;
+">重置</button>
+			<button class="setBtn" style="
+    margin-right: 10px;
+    margin-left: 10px;
+">设置</button>
+			<button class="staBtn" style="
+    margin-right: 10px;
+    margin-left: 10px;
+">开始</button>
+			<div class="content">
+				<div class="picBox picBox1">
+					<span>监督专家</span>
+					<div class="spanBox" id="spanBox1">
+						<!--<span class="pic pic1">张三丰</span>
+						<span class="pic pic1">张三丰</span>
+						<span class="pic pic1">张三丰</span>
+						<span class="pic pic1">张三丰</span>
+						<span class="pic pic1">张三丰</span>
+						<span class="pic pic1">张三丰</span>
+						<span class="pic pic1">张三丰</span>-->
+					
+					</div>
+				</div>
+				<div class="picBox picBox2">
+					<span>财务类</span>
+					<div class="spanBox" id="spanBox2">
+						<!--<span class="pic pic1">张三丰</span>
+						<span class="pic pic1">张三丰</span>
+						<span class="pic pic1">张三丰</span><span class="pic pic1">张三丰</span>
+						<span class="pic pic1">张三丰</span><span class="pic pic1">张三丰</span>
+						<span class="pic pic1">张三丰</span><span class="pic pic1">张三丰</span>
+						<span class="pic pic1">张三丰</span><span class="pic pic1">张三丰</span>
+						<span class="pic pic1">张三丰</span><span class="pic pic1">张三丰</span>
+						<span class="pic pic1">张三丰</span><span class="pic pic1">张三丰</span>-->
+					
+					</div>
+				</div>
+				<div class="picBox picBox3">
+					<span>技术类</span>
+				   <div class="spanBox" id="spanBox3">
+						<!--<span class="pic pic1">张三丰</span>
+						<span class="pic pic1">张三丰</span>
+						<span class="pic pic1">张三丰</span>
+						<span class="pic pic1">张三丰</span>
+						<span class="pic pic1">张三丰</span>
+						<span class="pic pic1">张三丰</span>-->
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<!--//设置弹框-->
+		<div id="alertBox" style="display: none;"></div>
+		<div class="setBox" style="display: none;">
+			<p class="titleP">人数设置</p>
+			<p><i>监督专家</i><input type="text" class="expertNum" value="1"/></p>
+			<p><i>财务类</i><input type="text" class="financeNum" value="1"/></p>
+			<p><i>技术类</i><input type="text" class="technologyNum" value="1"/></p>
+			<p><button class="saveBtn">保存</button> <button class="cancelBtn">取消</button></p>
+		</div>
+		
+		<!--确定按钮弹框-->
+		<div class="sureBox" style="display: none;">
+			<p>是否确定更改？</p>
+			<p><button class="sureBtn">确定</button><button class="cancelBtn">取消</button></p>
+		</div>
+	</body>
+</html>
+

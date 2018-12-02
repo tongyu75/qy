@@ -1,0 +1,100 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>辽宁清原抽水蓄能有限公司</title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			html,body {
+			  height: 100%;
+			  overflow: hidden;
+			}
+			body{
+				background: url(img/power.jpg) no-repeat 100% center;
+				background-size: cover;
+				/*background: url(img/power.jpg);
+				background-position: center;
+				background-repeat: no-repeat;
+				background-attachment: fixed;*/
+			}
+			.wrap{
+				position: absolute;
+				width: 650px;
+				height: 400px;
+				top: 50%;
+				left: 50%;
+				margin-top: -200px;
+				margin-left: -325px;
+				overflow: hidden;
+				text-align: center;
+				background: #fff;
+				opacity: 0.5;
+				filter:alpha(opacity=50);  
+			}
+			h2{
+				margin: 90px;
+			}
+			label{
+				width: 450px;
+			}
+			label i{
+				font-style:normal;
+				width: 40px;
+			}
+			button{
+				width: 120px;
+				height: 25px;
+				line-height: 25px;
+				cursor: pointer;
+				margin-top: 55px;
+			}
+		</style>
+		<script type="text/javascript" src="js/jquery-1.7.1.min.js"></script> 
+	</head>
+	<body>
+		<div class="wrap">
+			<h2>辽宁清原抽水蓄能有限公司</h2>
+			<div class="content">
+	           <label for="user"> <i style="font-weight:bold">用户名：</i> <input type="text"  id="userName"/></label>
+			   <label for="pwd"> <i style="font-weight:bold">密码：</i>  <input type="password"  id="password"/></label>
+			</div>
+			<button id="login" style="font-weight:bold">登录</button>
+		</div>
+	</body>
+	<script type="text/javascript">
+		var basePath = "http://192.168.1.7:8081/hwyRestful/"
+		$("#login").click(function(){
+			var userName = $("#userName").val();
+			var password = $("#password").val();
+			$.ajax({
+				url:basePath+"/validateUser/" + userName + "/" + password,
+				type:"get",
+				data:{},
+				dataType:"json",
+				success:function(data){
+					if(data.status==2){
+						alert("用户名或密码错误！");
+						getValidateImg();
+					}
+					if(data.status==1){
+						if (data.role==5){
+							window.location.href="http://192.168.1.7:8082/qy/content.html";
+						} else if (data.role==6){
+							window.location.href="http://192.168.1.7:8082/qy/info.html";
+						}
+					}
+					if(data.status==3){
+						getValidateImg();
+						alert("异常错误！");
+					}
+				},
+				error:function(){
+					
+				}
+			});
+		});
+	</script>
+</html>
