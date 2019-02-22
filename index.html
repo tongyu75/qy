@@ -65,7 +65,7 @@
 		</div>
 	</body>
 	<script type="text/javascript">
-		var basePath = "http://192.168.1.7:8081/hwyRestful/"
+		var basePath = "http://192.168.1.9:8081/hwyRestful/"
 		$("#login").click(function(){
 			var userName = $("#userName").val();
 			var password = $("#password").val();
@@ -81,9 +81,9 @@
 					}
 					if(data.status==1){
 						if (data.role==5){
-							window.location.href="http://192.168.1.7:8082/qy/content.html";
+							window.location.href="http://192.168.1.9:8082/qy/content.html";
 						} else if (data.role==6){
-							window.location.href="http://192.168.1.7:8082/qy/info.html";
+							window.location.href="http://192.168.1.9:8082/qy/info.html";
 						}
 					}
 					if(data.status==3){

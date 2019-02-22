@@ -1,5 +1,5 @@
 ﻿$(function(){
-	var basePath = "http://192.168.1.7:8081/hwyRestful/"
+	var basePath = "http://192.168.1.9:8081/hwyRestful/"
 		//设置按钮事件
 	$(".setBtn").click(function(){
 		$("#alertBox").show();
@@ -11,6 +11,17 @@
 		$("#spanBox1").empty();
 		$("#spanBox2").empty();
 		$("#spanBox3").empty();
+		// 清除已经选中的用户
+		$.ajax({
+				url:basePath+"resetSelectEmployee",
+				type:"get",
+				dataType:"json",
+				success:function(data){
+					console.log("已清除选中的用户");
+				},
+				error:function(){
+				}
+			});
 	});
 
 	//设置人数开始按钮事件
@@ -102,7 +113,18 @@ console.log(data.employeeName);
 	//退出按鈕
 	$("#contentOut").live("click", function(){
 		console.log(2222);
-		window.location.href="http://192.168.1.7:8082/qy/index.html";
+		// 清除已经选中的用户
+		$.ajax({
+				url:basePath+"resetSelectEmployee",
+				type:"get",
+				dataType:"json",
+				success:function(data){
+					console.log("已清除选中的用户");
+				},
+				error:function(){
+				}
+			});
+		window.location.href="http://192.168.1.9:8082/qy/index.html";
 	});
 
 	//取消按鈕

@@ -1,5 +1,5 @@
 ﻿$(function(){
-	var basePath = "http://192.168.1.7:8081/hwyRestful/"
+	var basePath = "http://192.168.1.9:8081/hwyRestful/"
 	// 查询人员列表
 	$.ajax({
 		url:basePath+"employee",
@@ -245,6 +245,6 @@
 		
 		//退出按鈕
 		$("#infoOut").click(function(){
-			window.location.href="http://192.168.1.7:8082/qy/index.html";
+			window.location.href="http://192.168.1.9:8082/qy/index.html";
 		});  
 });
